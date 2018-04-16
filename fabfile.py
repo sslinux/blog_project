@@ -17,6 +17,7 @@ def deploy():
         cd {} &&
         ../env/bin/pip install -r requirement.txt &&
         ../bin/python3 manage.py collectstatic --noinput &&
+        ../bin/python3 manage.py makemigrations &&
         ../env/bin/python3 manage.py migrate
     """.format(source_folder))
     # sudo('restart gunicorn-blog.sslinux.com')
