@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6e272f45-8dcb-4f56-93ea-06808e3c7de1" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/blog_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog_project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fabfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/fabfile.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/blog_project/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
-              <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
+              <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -421,7 +420,7 @@
     <entry file="file://$PROJECT_DIR$/blog_project/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
-          <caret line="27" column="58" selection-start-line="27" selection-start-column="58" selection-end-line="27" selection-end-column="58" />
+          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
         </state>
       </provider>
     </entry>
