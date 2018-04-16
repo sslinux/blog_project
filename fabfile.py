@@ -19,7 +19,7 @@ def deploy():
         ../env/bin/python3 manage.py collectstatic --noinput &&
         ../env/bin/python3 manage.py makemigrations &&
         ../env/bin/python3 manage.py migrate &&
-        ../env/bin/gunicorn --bind 127.0.0.1:8000 blog_project.wsgi:application
+        ../env/bin/gunicorn --bind 127.0.0.1:8000 blog_project.wsgi:application &
     """.format(source_folder))
     sudo('service nginx reload')
     print("--over--")
