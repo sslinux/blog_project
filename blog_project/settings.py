@@ -25,7 +25,7 @@ SECRET_KEY = '5=%7go%5i!$$i!!2#1wj+=sr$!%dc_3kqw)#r0l97gzuo%v+k)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*','127.0.0.1','localhost','*.sslinux.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
