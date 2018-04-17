@@ -2,3 +2,4 @@
 *.py[cod]
 *.so
 *.egg
+fabfile.py*

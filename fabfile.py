@@ -16,7 +16,7 @@ def deploy():
     run("""
         cd {} &&
         ../env/bin/pip install -r requirement.txt &&
-        ../env/bin/python3 manage.py collectstatic --noinput &&
+        ../env/bin/python3 manage.py collectstatic --input "yes\n" &&
         ../env/bin/python3 manage.py makemigrations &&
         ../env/bin/python3 manage.py migrate &&
         ../env/bin/gunicorn --bind 127.0.0.1:8000 blog_project.wsgi:application &
