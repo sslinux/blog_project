@@ -23,10 +23,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '5=%7go%5i!$$i!!2#1wj+=sr$!%dc_3kqw)#r0l97gzuo%v+k)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*', 'blog.sslinux.com']
- 
+
 
 # Application definition
 

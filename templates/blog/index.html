@@ -77,7 +77,7 @@
         <div class="row">
         {% block main %}
                 {% for post in post_list %}
-                <article class="post post-1">
+                <article class="post post-{{ post.pk }}">
                     <header class="entry-header">
                         <h1 class="entry-title">
                             <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
@@ -87,12 +87,13 @@
                             <span class="post-date"><a href="#"><time class="entry-date"
                                                                       datetime="{{ post.create_time }}">{{ post.create_time }}</time></a></span>
                             <span class="post-author"><a href="#">{{ post.author }}</a></span>
-                            <span class="comments-link"><a href="#">{{ post.comment_set.count }} 评论</a></span>
-                            <span class="views-count"><a href="#">588 阅读</a></span>
+                            <span class="comments-link"><a href="{{ post.get_absolute_url }}">{{ post.comment_set.count }} 评论</a></span>
+                            <span class="views-count"><a href="{{ post.get_absolute_url }}">{{ post.views }} 阅读</a></span>
                         </div>
                     </header>
                     <div class="entry-content clearfix">
                         <p>{{ post.excerpt }}</p>
+{#                        <p>{{ post.body | truncatechars:54 }}</p>#}   不建议使用truncatechars模板过滤器，容易造成字符错乱；
                         <div class="read-more cl-effect-14">
                             <a href="{{ post.get_absolute_url }}" class="more-link">继续阅读 <span class="meta-nav">→</span></a>
                         </div>
@@ -180,6 +181,7 @@
         </div>
     </div>
 </div>
+
 <footer id="site-footer">
     <div class="container">
         <div class="row">

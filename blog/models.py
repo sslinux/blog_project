@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.six import python_2_unicode_compatible
 from django.urls import reverse
+from django.utils.html import strip_tags
+import markdown
 
 # Create your models here.
 
@@ -36,6 +38,8 @@ class Post(models.Model):
     category = models.ForeignKey(Category)
     tags = models.ManyToManyField(Tag,blank=True)   # 可以没有标签，也可以有多个标签；
     author = models.ForeignKey(User)
+    views = models.PositiveIntegerField(default=0)
+
 
     def __str__(self):
         return self.title
@@ -47,6 +51,22 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-create_time', 'title']
+
+    def increase_views(self):
+        self.views += 1
+        self.save(update_fields=['views'])
+
+    def save(self,*args,**kwargs):
+        if not self.excerpt:
+            md = markdown.Markdown(extensions=[
+                'markdown.extensions.extra',
+                'markdown.extensions.codehilite',
+            ])
+            self.excerpt = strip_tags(md.convert(self.body))[:54]
+
+        # 调用父类的save方法将数据保存到数据库中：
+        super(Post,self).save(*args,**kwargs)
+
 
 
 
